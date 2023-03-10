@@ -1,30 +1,25 @@
 import pygame
+import config
+from player import Player
 
 
 # create a new game object using pygame
+# use config for constants
 
 class Game:
     def __init__(self):
-        self.running = True
-        self.playing = False
-        self.display = None
-        self.size = self.width, self.height = 800, 600
-        self.clock = pygame.time.Clock()
-        self.fps = 60
-        self.caption = "Tetris"
-        self.player = None
-        self.all_sprites = None
-
-    def new(self):
+        pygame.init()
+        self.size = self.width, self.height = config.SCREEN_WIDTH, config.SCREEN_HEIGHT
         self.display = pygame.display.set_mode(self.size)
-        pygame.display.set_caption(self.caption)
-        self.playing = True
-        self.all_sprites = pygame.sprite.Group()
+        self.caption = config.TITLE
+        self.clock = pygame.time.Clock()
+        self.fps = config.FPS
+        self.running = True
         self.player = Player(self)
-        self.all_sprites.add(self.player)
+        self.all_sprites = pygame.sprite.Group()
 
     def run(self):
-        while self.playing:
+        while self.running:
             self.clock.tick(self.fps)
             self.events()
             self.update()
@@ -33,7 +28,6 @@ class Game:
     def events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                self.playing = False
                 self.running = False
 
     def update(self):

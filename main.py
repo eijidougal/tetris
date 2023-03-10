@@ -1,6 +1,12 @@
-def print_hi(name):
-    print(f'Hi, {name}')
+from game import Game
+
+
+def main():
+    g = Game()
+
+    g.run()
+    g.quit()
 
 
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    main()

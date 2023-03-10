@@ -1,4 +1,5 @@
 import pygame
+import config
 
 
 # player object for tetris
