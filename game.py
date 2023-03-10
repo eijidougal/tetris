@@ -1,5 +1,6 @@
 import pygame
 import config
+from board import Board
 
 
 # create a new game object using pygame
@@ -15,6 +16,8 @@ class Game:
         self.fps = config.FPS
         self.running = True
         self.all_sprites = pygame.sprite.Group()
+        self.board = Board()
+
 
     def run(self):
         while self.running:
@@ -30,9 +33,11 @@ class Game:
 
     def update(self):
         self.all_sprites.update()
+        self.board.add_block()
 
     def draw(self):
         self.display.fill(config.BLACK)
+        self.board.draw(self.display)
         self.all_sprites.draw(self.display)
         pygame.display.flip()
 

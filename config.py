@@ -19,6 +19,10 @@ GREY = (128, 128, 128)
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
+# board settings
+BOARD_WIDTH = 300
+BOARD_HEIGHT = 500
+
 # game settings
 FPS = 60
 TITLE = "Tetris"
@@ -26,3 +30,8 @@ BGCOLOR = BLACK
 
 # block settings
 BLOCK_SIZE = 20
+
+# difficulty settings
+DIFFICULTY = 1
+DIFFICULTY_INCREASE = 0.1
+INITIAL_DROP_SPEED = 1
