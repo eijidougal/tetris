@@ -1,6 +1,5 @@
 import pygame
 import config
-from player import Player
 
 
 # create a new game object using pygame
@@ -15,7 +14,6 @@ class Game:
         self.clock = pygame.time.Clock()
         self.fps = config.FPS
         self.running = True
-        self.player = Player(self)
         self.all_sprites = pygame.sprite.Group()
 
     def run(self):
@@ -34,7 +32,9 @@ class Game:
         self.all_sprites.update()
 
     def draw(self):
-        pass
+        self.display.fill(config.BLACK)
+        self.all_sprites.draw(self.display)
+        pygame.display.flip()
 
     def quit(self):
         pygame.quit()

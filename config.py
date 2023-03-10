@@ -24,9 +24,5 @@ FPS = 60
 TITLE = "Tetris"
 BGCOLOR = BLACK
 
-# player settings
-PLAYER_SPEED = 5
-PLAYER_SIZE = 20
-
 # block settings
 BLOCK_SIZE = 20
